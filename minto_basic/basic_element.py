@@ -59,7 +59,6 @@ class minto_element:
     
     def basic_info(self, title, choosetime, member, mubiao=None, xieban=None, leader=None, unit=None):
         """基本信息填写"""
-        
         self.wd.switch_to.default_content()
         self.wd.switch_to.frame(2)
         self.wd.find_element_by_xpath('//input[@id="1"]').send_keys(title)  # 输入事项名称
@@ -77,7 +76,6 @@ class minto_element:
         '''做一个循环来读取承办人'''
         member_list = member.split(',')  # 输入的是字符串，用符号来切割一下
         print(len(member_list))
-        # member_list = ['李慧', '杨冬', '廖威']
         for i in range(len(member_list)):
             sleep(1)
             self.wd.find_element_by_xpath('//*[@name="searchInput"]').clear()
@@ -95,4 +93,4 @@ class minto_element:
         """点击交办"""
         self.wd.switch_to.default_content()
         self.wd.switch_to.frame(2)
-        self.wd.find_element_by_xpath('//span[contains(text(),"交办")]').click()
+        self.wd.find_element_by_xpath('//div[@class="btnLiDiv mt-btn"][2]/span').click()

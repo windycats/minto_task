@@ -8,3 +8,4 @@ class TaskCreate(minto_element):
         self.click_create()     # 点击创建
         self.basic_info(title, choosetime, member)  # 点击标题、时间、承办人三个必填项
         self.create_ok()    # 点击交办
+
